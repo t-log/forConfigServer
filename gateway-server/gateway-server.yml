@@ -6,6 +6,20 @@ spring:
         discovery.locator:
         enabled: true
         lowerCaseServiceId: true
+        routes:
+        - id: organisation-service
+          uri: lb://organisation-service
+          predicates:
+          - Path=/organisation/**
+          filters:
+          - RewritePath=/organisation/(?<path>.*), /$\{path}
+        - id: licensing-service
+          uri: lb://licensing-service
+          predicates:
+          - Path=/license/**
+          filters:
+          - RewritePath=/license/(?<path>.*), /$\{path}
+
 
 server:
   port: 8072
