@@ -1,5 +1,7 @@
+
 server:
   port: 8072
+spring:
   cloud:
     gateway:
       server:
@@ -24,7 +26,7 @@ server:
         
 eureka:
   instance:
-    preferip-address: true
+    prefer-ip-address: true
   client:
     registerWithEureka: true
     fetchRegistry: true
