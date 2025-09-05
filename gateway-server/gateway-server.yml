@@ -3,9 +3,10 @@ spring:
     gateway:
       server:
        webflux:
-        discovery.locator:
-        enabled: true
-        lowerCaseServiceId: true
+        discovery:
+          locator:
+            enabled: true
+            lower-case-service-id: true
         routes:
         - id: organisation-service
           uri: lb://organisation-service
