@@ -7,13 +7,13 @@ spring:
         enabled: true
         lowerCaseServiceId: true
         routes:
-        - id: organisation-service
+        - id: ORGANISATION-SERVICE
           uri: lb://organisation-service
           predicates:
           - Path=/organisation/**
           filters:
           - RewritePath=/organisation/(?<path>.*), /$\{path}
-        - id: licensing-service
+        - id: LICENSING-SERVICE
           uri: lb://licensing-service
           predicates:
           - Path=/license/**
