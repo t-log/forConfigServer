@@ -5,7 +5,9 @@ spring:
     name: gateway-server
   cloud:
     gateway:
-      routes:
+      server:
+        webflux:
+          routes:
         - id: ORGANISATION-SERVICE
           uri: lb://organisation-service
           predicates:
